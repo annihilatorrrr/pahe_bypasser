@@ -485,5 +485,5 @@ URL(document.referrer).hostname,["m.search.naver.com","m.search.daum.net"].inclu
 
 link_regex = r"location\.href\s*=\s*atob\('(.*?)'\)"
 
-link = base64.b64decode(re.search(link_regex, doc).group(1)).decode('utf-8')
+link = base64.b64decode(re.search(link_regex, doc)[1]).decode('utf-8')
 print(link)

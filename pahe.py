@@ -28,7 +28,7 @@ async def get_data(context,url):
 
 async def get_link(content):
 	try:
-		link = re.search(link_regex, content).group(1)
+		link = re.search(link_regex, content)[1]
 		link = base64.b64decode(link).decode('utf-8')
 	except (AttributeError, TypeError):
 		link = None
